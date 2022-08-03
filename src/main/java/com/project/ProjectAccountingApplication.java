@@ -13,7 +13,7 @@ private ProjectAccountingApplication() {}
             Connection con = null;
             String url = "jdbc:mysql://localhost:3306/AccountingOfStudents";
             String user= "root";
-            String password = "zaton69";
+            String password = "";
 
             try {
                 // Try to connect
