@@ -10,10 +10,11 @@ private ProjectAccountingApplication() {}
 
     public static Connection connection() {
             // Connection to DataBase MySQL
+
             Connection con = null;
             String url = "jdbc:mysql://localhost:3306/AccountingOfStudents";
             String user= "root";
-            String password = "zaton69";
+            String password = "";
 
             try {
                 // Try to connect
@@ -161,12 +162,56 @@ private ProjectAccountingApplication() {}
     }
 
 public static void main(String[] args) {
-    //ProjectAccountingApplication.insertValue();
-    //ProjectAccountingApplication.insertValue();
-    ProjectAccountingApplication.UpdateStatement();
-}
 
-}
+    boolean boolean1 = Boolean.TRUE;
+
+    while (boolean1  == Boolean.TRUE) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("You can choose: view - 1 , insert - 2, delete - 3, update - 4");
+
+        int i = scanner.nextInt();
+
+        switch (i) {
+
+            case 1:
+                System.out.println("View");
+                ProjectAccountingApplication.viewValue();
+                break;
+            case 2:
+                System.out.println("insert");
+                ProjectAccountingApplication.insertValue();
+                break;
+            case 3:
+                System.out.println("delete");
+                ProjectAccountingApplication.deleteValues();
+                break;
+            case 4:
+                System.out.println("Update");
+                ProjectAccountingApplication.UpdateStatement();
+                break;
+        }
+
+            System.out.println("Wand to Continue?");
+
+            String Boolean2 = scanner.next().toString();
+
+            if (Boolean2.equals("yes")) {
+                boolean1 = Boolean.TRUE;
+            }
+
+                if (Boolean2.equals("no")) {
+                    boolean1 = Boolean.FALSE;
+
+                    ProjectAccountingApplication.closeConnection(connection());
+                }
+
+                }
+            }
+
+        }
+
 
 
 
